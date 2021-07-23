@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const { id } = req.params;
   const sql = 'SELECT * FROM works WHERE id=?';
-  connection.query(sql, [id], (err, result) => {
+  connection.query(sql, id, (err, result) => {
     if (err) {
       res.status(500).json({ errorMessage: err });
     } else {
