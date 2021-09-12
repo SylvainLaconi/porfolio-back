@@ -11,6 +11,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 // TODO: add your routes here
+app.get('/', (req, res) => {
+  res.send('Welcome to my portfolio API');
+});
 app.use('/api/works', worksRouter);
 
 module.exports = app;
